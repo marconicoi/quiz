@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 					nav.appendChild(dot);
 				});
 				if (!data.navigable) {
-					nav.hidden = true;
+					nav.style.display = 'none';
 				}
 				const se = document.createElement('section');
 				se.innerHTML = tr;
