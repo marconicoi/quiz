@@ -84,7 +84,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 					if (data.results && Array.isArray(data.results)) {
 						const total = Array.from(div.querySelectorAll('input:checked')).reduce((a, c) => a + c.val, 0);
 						data.results.forEach(re => {
-							console.log(se, re, re.min, total, re.min<=total);
 							if (re.min <= total) {
 								se.querySelectorAll('.title').forEach(el => el.innerText = re.title);
 								se.querySelectorAll('.text').forEach(el => el.innerText = re.text);
