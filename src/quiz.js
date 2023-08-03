@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	document.querySelectorAll('.quiz-container[src]').forEach(el => {
 		const tq = el.children[0].outerHTML;
 		const tr = el.children[1].outerHTML;
-		el.innerHTML = '<div style="position:relative;height:100%;width:100%;overflow-x:hidden;overflow-y:scroll"></div>';
+		el.innerHTML = '<div style="position:relative;height:100%;width:100%;overflow:hidden"></div>';
 		const div = el.querySelector('div');
 		fetch(el.getAttribute('src'))
 		.then((response) => response.json())
@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 					se.innerHTML = tq;
 					se.hidden = true;
 					se.style.position = 'absolute';
+					se.style.overflowY = 'scroll';
 					se.style.inset = '0';
 					se.style.transition = 'all .3s ease-in-out';
 					se.querySelectorAll('.title').forEach(el => el.innerText = qu.title);
